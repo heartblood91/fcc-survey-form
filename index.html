@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="shortcut icon" type="image/png" href="image/fcc.png" />
+    <title>Formulaire de satisfaction</title>
+
+</head>
+
+<body>
+    <div>
+        <header>
+            <h1 id="title">Formulaire de satisfaction</h1>
+
+            <p id="description">
+                Ce questionnaire est <strong>anonyme</strong>, nous te remercions chaleureusement de consacrer
+                quelques minutes de ton si précieux temps!
+                <img src="./image/pickaxe.png" alt="Pioche en diamant de Minecraft">
+                <img src="./image/diamond.png" alt="Diamant de Minecraft">
+            </p>
+        </header>
+        <main class="container">
+
+            <form id="survey-form">
+                <label class="label" id="name-label" for="name">Nom</label><br>
+                <input type="text" placeholder="Comment je peux t'appeler?" id="name" required><br>
+
+                <label class="label" id="email-label" for="email">Email</label><br>
+                <input type="email" placeholder="Quel est ton email?" id="email" required><br>
+
+                <label class="label" id="number-label" for="number">Âge</label><br>
+                <input type="number" placeholder="Quel est ton âge?" id="number" min=8 max=100 required><br>
+
+                <label class="label" id="dropdown-label" for="dropdown">Aviez-vous une expérience en code?
+                </label><br>
+                <select id="dropdown">
+                    <option value="oui">Oui</option>
+                    <option value="non">Non</option>
+                </select><br>
+
+                <label class="label">Quel langage?</label><br>
+                <div class="checkboxButton">
+                    <label id="langage-label" for="html" class="checkboxButtonContainer">HTML
+                        <input type="checkbox" id="html" name="langage" value="html">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label id="langage-label" for="css" class="checkboxButtonContainer">CSS
+                        <input type="checkbox" id="css" name="langage" value="css">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label id="langage-label" for="javascript" class="checkboxButtonContainer">Javascript
+                        <input type="checkbox" id="javascript" name="langage" value="javascript">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+
+
+                <label class="label">Quel est votre statut</label><br>
+                <div class="radioButton">
+                    <label id="job-label" for="study" class="radioButtonContainer">Etudiant
+                        <input type="radio" name="job" id="study" value="study">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label id="job-label" for="jobless" class="radioButtonContainer">Sans emploi
+                        <input type="radio" id="jobless" name="job" value="jobless">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label id="job-label" for="cdd" class="radioButtonContainer">CDD
+                        <input type="radio" id="cdd" name="job" value="cdd">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label id="job-label" for="cdi" class="radioButtonContainer">CDI
+                        <input type="radio" id="cdi" name="job" value="cdi">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label id="job-label" for="autres" class="radioButtonContainer">Autres
+                        <input type="radio" id="autres" name="job" value="autres">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+
+                <label class="label" id="commentary-label" for="comment">Un commentaire ?
+                    Lachez-vous:</label><br>
+                <textarea placeholder="Je t'écoute..." rows="10" cols="50" id="comment"></textarea><br>
+
+                <button class="btn" type="submit" id="submit">Valider</button>
+            </form>
+        </main>
+    </div>
+
+
+    <!-- Script de validation de freecodecamp -->
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <script id="rendered-js">
+        // coded by @ChaituVR
+        const projectName = 'survey-form';
+        localStorage.setItem('example_project', 'Tribute Page');
+            //# sourceURL=pen.js
+    </script>
+
+
+
+</body>
+
+</html>

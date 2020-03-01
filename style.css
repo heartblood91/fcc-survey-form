@@ -1,0 +1,223 @@
+/* Variables root */
+
+:root {
+  --dark: #292929;
+  --darkblue-alpha: rgb(75, 119, 190, 0.8);
+  --gris: #d5d5d5;
+  --bg-input-hover: #4b77be;
+  --bg-input-checked: #0f4880;
+}
+
+/* Supprime la marge + évite que les box dépasse */
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* Ajoute le background + le surfiltre gris / transparent */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background: var(--dark);
+  background-image: linear-gradient(
+      115deg,
+      rgba(190, 190, 190, 0.8),
+      rgb(242, 241, 239, 0.7)
+    ),
+    url("./image/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+/* Header */
+header {
+  margin: 20px auto;
+  padding: 10px;
+  color: #2b2b2b;
+}
+
+header h1 {
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 1px 1px var(--gris);
+
+  font-style: italic;
+  border-bottom: 2px solid var(--darkblue-alpha);
+  width: 300px;
+  margin: 10px auto 20px auto;
+  padding-bottom: 10px;
+}
+
+header p {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+/* FORMULAIRE */
+form {
+  background: var(--darkblue-alpha);
+  padding: 15px;
+  border-radius: 2%;
+  max-width: 500px;
+  margin: auto;
+}
+
+.label {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+
+/* Gères les inputs en ajoutant un fond blanc */
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select,
+textarea,
+.radioButton,
+.checkboxButton {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 15px 0;
+  border: none;
+  background: #f1f1f1;
+  border-radius: 4px;
+  font-size: 1.1rem;
+}
+
+/* idem pour le textarea */
+textarea {
+  min-height: 150px;
+  width: 100%;
+  resize: vertical;
+  font-size: 1.5rem;
+}
+
+/* Si focus, on blanchit le bg */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+  background-color: #fff;
+  outline: none;
+}
+
+/* Checkox - RadioButton customisé */
+/* LABEL: */
+.checkboxButtonContainer,
+.radioButtonContainer {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Cache les checkbox/RadioButton par défaut */
+.checkboxButtonContainer input,
+.radioButtonContainer input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Créé une custom checkbox + un radioButton*/
+.checkboxButtonContainer .checkmark,
+.radioButtonContainer .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: var(--darkblue-alpha);
+  border-radius: 2px;
+}
+
+/* Arrondi le radioButton custom */
+.radioButtonContainer .checkmark {
+  border-radius: 50%;
+}
+
+/* Checkbox/RadioButton hover */
+.checkboxButtonContainer:hover input ~ .checkmark,
+.radioButtonContainer:hover input ~ .checkmark {
+  background-color: var(--bg-input-hover);
+}
+
+/* Checkbox/RadioButton checked */
+.checkboxButtonContainer input:checked ~ .checkmark,
+.radioButtonContainer input:checked ~ .checkmark {
+  background-color: var(--bg-input-checked);
+}
+
+/* Créé un indication (visible uniquement si coché) */
+.checkboxButtonContainer .checkmark:after,
+.radioButtonContainer .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Affiche l'indication si coché */
+.checkboxButtonContainer input:checked ~ .checkmark:after,
+.radioButtonContainer input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Customisation de l'indicateur checkbox */
+.checkboxButtonContainer .checkmark:after {
+  left: 7.2px;
+  top: 4px;
+  width: 4px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* Customisation de l'indicateur radioButton */
+.radioButtonContainer .checkmark:after {
+  top: 7.2px;
+  left: 7.2px;
+  width: 6.4px;
+  height: 6.4px;
+  border-radius: 50%;
+  background: white;
+}
+
+/* Button validation du formulaire */
+.btn {
+  background-color: var(--dark);
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+  border-radius: 4px;
+}
+
+.btn:hover {
+  opacity: 1;
+}
